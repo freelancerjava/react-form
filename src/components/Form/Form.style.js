@@ -7,6 +7,18 @@ const common = css`
     position: absolute;
     top: 33%;
     left: 25px;
+    @media (max-width: 992px) {
+        top: 30%;
+        left: 20px;
+    }
+    @media (max-width: 768px) {
+        top: 25%;
+        left: 20px;
+    }
+    @media (max-width: 600px) {
+        top: 25%;
+        left: 20px;
+    }
 `
 export const Container = styled.div`
   width: 100%;
@@ -21,6 +33,18 @@ export const Container = styled.div`
 export const Logo = styled.img`
   width: 212px;
   margin-bottom: 62px;
+  @media (max-width: 992px) {
+        width: 200px;
+        margin-bottom: 55px;
+    }
+    @media (max-width: 768px) {
+        width: 180px;
+        margin-bottom: 40px;
+    }
+    @media (max-width: 600px) {
+        width: 150px;
+        margin-bottom: 30px;
+    }
 `;
 export const Content = styled.div`
   width: 480px;
@@ -76,8 +100,19 @@ export const Input = styled.input`
     -moz-box-shadow: 0px 5px 28px 5px rgba(212, 190, 201, 0.2);
     box-shadow: 0px 5px 28px 5px rgba(212, 190, 201, 0.2);
   }
+    @media (max-width: 992px) {
+        height: 50px;
+        padding: 28px 18px 28px 45px;
+    }
+    @media (max-width: 768px) {
+        height: 40px;
+        padding: 20px 15px 20px 45px;
+    }
+    @media (max-width: 600px) {
+        height: 30px;
+        padding: 20px 15px 20px 45px;
+    }
 `;
-
 export const PasswordInput = styled(Input)`
     border-image-source: linear-gradient( 180deg, rgb(224 178 195) 0%,rgb(172 151 161) 100% );
     &[type="password"] {
@@ -98,7 +133,7 @@ export const PasswordIcon = styled(password)`
 `;
 export const ShowPassword = styled.span`
   position: absolute;
-  top: 30%;
+  top: 28%;
   right: 20px;
   color: #fff;
   cursor: pointer;
@@ -107,6 +142,15 @@ export const ShowPassword = styled.span`
   font-size: 12px;
   line-height: 20px;
   letter-spacing: 1px;
+  @media (max-width: 992px) {
+        top: 25%;
+    }
+    @media (max-width: 768px) {
+        top: 22%;
+    }
+    @media (max-width: 600px) {
+        top: 22%;
+    }
 `;
 export const CheckboxWrap = styled.div`
   display: flex;
@@ -135,7 +179,7 @@ export const SubmitButton = styled.button`
   margin: 31px 0 20px 0;
   transition: all 0.2s ease;
   &:hover {
-      color: #000;      
+      color: #000;
       background-color: #FFF323;
   }
   /* &::before,
@@ -166,4 +210,7 @@ export const ForgotPassword = styled.span`
     line-height: 17px;
     cursor: pointer;
     text-align: center;
+    &:hover {
+        text-decoration: underline;
+    }
 `

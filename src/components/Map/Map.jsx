@@ -1,16 +1,9 @@
 import { useState } from 'react';
-import logo from '../../assets/images/logo.svg';
-import search from '../../assets/icons/search.svg';
-import edit from '../../assets/icons/edit-icon.svg';
-import sort from '../../assets/icons/sort-icon.svg';
-import frame1 from '../../assets/icons/frame_1.svg';
-import frame2 from '../../assets/icons/frame_2.svg';
-import frame3 from '../../assets/icons/frame_3.svg';
 import { topMenu, bottomMenu } from '../../utils/menus'
 import {
-    ListItemIcon, ListItemTitle, ListContentBody, ListContentButton,
-    Logo, Aside, ListWrap, BottomList, TopList, ListItem, ListContentHeader, ListContentWrap, LisItemIcon,
-    Container, YMap, MapYandex, ListTitle, ListIcon, Content, ContentWrap, ListContent, LogoWrapper, ListContentItem,
+    Container, YMap, MapYandex, ListTitle, Content, ContentWrap, ListContent, LogoWrapper, ListContentItem,
+    Logo, Aside, ListWrap, BottomList, TopList, ListItem, ListContentHeader, LisItemIcon, EditIcon, SearchIcon,
+    ListItemTitle, ListContentBody, ListContentButton, Icon_1, Icon_2, Icon_3, ListNumber, ButtonIcon_1, ButtonIcon_2, ButtonIcon_3,
 } from './Map.style';
 const Maps = () => {
     const [keys, setKeys] = useState('me');
@@ -18,46 +11,116 @@ const Maps = () => {
     const contentList = {
         me: <>
             <ListContentHeader>
-                <ListIcon src={edit} />
+                <EditIcon />
                 <ListTitle>Мои поля</ListTitle>
-                <ListIcon src={search} />
+                <SearchIcon />
             </ListContentHeader>
-            <ListContentWrap>
+            <ListContentItem>
+                <Icon_1 />
+                <ListContentBody>
+                    <ListItemTitle>Поле #123</ListItemTitle>
+                    <ListItemTitle subtext={true}>Нет культуры</ListItemTitle>
+                    <ListContentButton color="red" textColor="red">
+                        <ButtonIcon_1 />
+                        Выброс
+                    </ListContentButton>
+                </ListContentBody>
+                <ListNumber>0.03</ListNumber>
+            </ListContentItem>
+            <ListContentItem>
+                <Icon_2 />
+                <ListContentBody>
+                    <ListItemTitle>Поле #123</ListItemTitle>
+                    <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
+                    <ListContentButton color="green" textColor="green">
+                        <ButtonIcon_2 />
+                        Есть совет
+                    </ListContentButton>
+                    <ListContentButton color="red" textColor="red">
+                        <ButtonIcon_1 />
+                        Выброс
+                    </ListContentButton>
+                </ListContentBody>
+                <ListNumber>0.03</ListNumber>
+            </ListContentItem>
+            <ListContentItem>
+                <Icon_3 />
+                <ListContentBody>
+                    <ListItemTitle>Поле #123</ListItemTitle>
+                    <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
+                    <ListContentButton color="yellow" textColor="yellow">
+                        <ButtonIcon_3 />
+                        Засыхает
+                    </ListContentButton>
+                </ListContentBody>
+                <ListNumber>0.03</ListNumber>
+            </ListContentItem>
+        </>,
+        diagnostics:
+            <><ListContentHeader>
+                <EditIcon />
+                <ListTitle>Диагностика</ListTitle>
+                <SearchIcon />
+            </ListContentHeader>
                 <ListContentItem>
-                    <ListItemIcon src={frame1} />
+                    <Icon_1 />
                     <ListContentBody>
                         <ListItemTitle>Поле #123</ListItemTitle>
                         <ListItemTitle subtext={true}>Нет культуры</ListItemTitle>
-                        <ListContentButton>Выброс</ListContentButton>
+                        <ListContentButton color="red" textColor="red">
+                            <ButtonIcon_1 />
+                            Выброс
+                        </ListContentButton>
                     </ListContentBody>
+                    <ListNumber>0.08</ListNumber>
                 </ListContentItem>
-            </ListContentWrap>
-
-        </>,
-        diagnostics:
-            <ListContentHeader>
-                <ListIcon src={edit} />
-                <ListTitle>Диагностика</ListTitle>
-                <ListIcon src={search} />
-            </ListContentHeader>,
+                <ListContentItem>
+                    <Icon_2 />
+                    <ListContentBody>
+                        <ListItemTitle>Поле #123</ListItemTitle>
+                        <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
+                        <ListContentButton color="green" textColor="green">
+                            <ButtonIcon_2 />
+                            Есть совет
+                        </ListContentButton>
+                        <ListContentButton color="red" textColor="red">
+                            <ButtonIcon_1 />
+                            Выброс
+                        </ListContentButton>
+                    </ListContentBody>
+                    <ListNumber>0.10</ListNumber>
+                </ListContentItem>
+                <ListContentItem>
+                    <Icon_3 />
+                    <ListContentBody>
+                        <ListItemTitle>Поле #123</ListItemTitle>
+                        <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
+                        <ListContentButton color="yellow" textColor="yellow">
+                            <ButtonIcon_3 />
+                            Засыхает
+                        </ListContentButton>
+                    </ListContentBody>
+                    <ListNumber>0.02</ListNumber>
+                </ListContentItem>
+            </>,
         recomendation:
             <ListContentHeader>
-                <ListIcon src={edit} />
+                <EditIcon />
                 <ListTitle>Рекомендации</ListTitle>
-                <ListIcon src={search} />
+                <SearchIcon />
             </ListContentHeader>,
         note:
             <ListContentHeader>
-                <ListIcon src={edit} />
+                <EditIcon />
                 <ListTitle>Заметки</ListTitle>
-                <ListIcon src={search} />
+                <SearchIcon />
             </ListContentHeader>,
     }
     return (
         <Container>
             <Aside>
                 <LogoWrapper>
-                    <Logo src={logo} alt='logo' />
+                    <Logo />
                 </LogoWrapper>
                 <ListWrap>
                     <TopList>

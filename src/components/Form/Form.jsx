@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import Checkbox from './Checkbox';
-import logo from '../../assets/images/logo.svg'
+import Checkbox from '../Checkbox/Checkbox';
+import logo from '../../assets/images/logo.svg';
 import {
     Container, Content, Logo, TitleWrap, Title, InputWrap, Input, InboxIcon, PasswordIcon,
     ShowPassword, CheckboxWrap, CheckboxText, PasswordInput, SubmitButton, ForgotPassword, Label, UserIcon
 } from './Form.style'
 const Form = () => {
+    const LOGIN = 'login';
+    const REGISTER = 'register';
     const [text, setText] = useState('');
-    const [keys, setKeys] = useState('login');
+    const [keys, setKeys] = useState(LOGIN);
     const [checked, setChecked] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
-    const onActive = event => {
-        setKeys(event)
-    }
+    const onActive = key => setKeys(key);
     const contentList = {
         login: <>
             <InputWrap>
@@ -54,7 +54,7 @@ const Form = () => {
                 <CheckboxText>Запомнить меня</CheckboxText>
             </CheckboxWrap>
             <SubmitButton>Регистрация</SubmitButton>
-            <ForgotPassword onClick={() => setKeys('login')}>У вас есть аккаунт?</ForgotPassword>
+            <ForgotPassword onClick={() => setKeys(LOGIN)}>У вас есть аккаунт?</ForgotPassword>
         </>
     }
     return (
@@ -62,8 +62,8 @@ const Form = () => {
             <Logo src={logo} />
             <Content>
                 <TitleWrap>
-                    <Title onClick={() => onActive('login')} active={keys === 'login'}>Вход</Title>
-                    <Title onClick={() => onActive('register')} active={keys === 'register'}>Регистрация</Title>
+                    <Title onClick={() => onActive(LOGIN)} active={keys === LOGIN}>Вход</Title>
+                    <Title onClick={() => onActive(REGISTER)} active={keys === REGISTER}>Регистрация</Title>
                 </TitleWrap>
                 {contentList[keys]}
             </Content>
