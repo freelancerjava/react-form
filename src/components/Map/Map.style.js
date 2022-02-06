@@ -68,6 +68,8 @@ const ListItem = styled.li`
     line-height: 24px;
     font-size: 16px;
     cursor: pointer;
+    transition: all 0.2s ease-in;
+    color: ${({ active }) => (active ? "#fff" : "#7E7BA2")};
     border-right: ${({ active }) => (active ? "3px solid #FFF323" : "none")};
     background: ${({ active }) => (active ? "linear-gradient(270deg, #FFF323 -473.83%, rgba(255, 243, 35, 0) 83.89%)" : "transparent")};
     &:hover {
@@ -111,7 +113,40 @@ const ListTitle = styled.h3`
     font-weight: normal;
     font-family: 'HandelGothicTLRegular';
 `
+const ListContentWrap = styled.div`
+    display: flex;
+`
+const ListContentItem = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+const ListItemIcon = styled.img`
+    width: 40px;
+`
+const ListItemTitle = styled.h1`
+    color: ${({ subtext }) => !subtext ? '#fff' : '#757575'};
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    font-style: normal;
+    font-family: Roboto;
+    letter-spacing: 0.4px;
+`
+const ListContentBody = styled.div`
+    display: flex;
+    margin-left: 22px;
+    flex-direction: column;
+    justify-content: flex-start;
+`
+const ListContentButton = styled.button`
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background: rgba(255, 31, 0, 0.08);
+`
 export {
     Container, YMap, MapYandex, Content, Aside, LogoWrapper, Logo, ListWrap, TopList, BottomList,
-    ListItem, LisItemIcon, Link, ListContent, ContentWrap, ListContentHeader, ListIcon, ListTitle
+    ListItem, LisItemIcon, Link, ListContent, ContentWrap, ListContentHeader, ListIcon, ListTitle,
+    ListContentWrap, ListContentItem, ListItemIcon, ListItemTitle, ListContentBody, ListContentButton,
 }

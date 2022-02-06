@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
 import search from '../../assets/icons/search.svg';
 import edit from '../../assets/icons/edit-icon.svg';
@@ -9,21 +8,32 @@ import frame2 from '../../assets/icons/frame_2.svg';
 import frame3 from '../../assets/icons/frame_3.svg';
 import { topMenu, bottomMenu } from '../../utils/menus'
 import {
-    Logo, Aside, ListWrap, BottomList, TopList, ListItem, ListContentHeader, Link, LisItemIcon,
-    Container, YMap, MapYandex, ListTitle, ListIcon, Content, ContentWrap, ListContent, LogoWrapper,
+    ListItemIcon, ListItemTitle, ListContentBody, ListContentButton,
+    Logo, Aside, ListWrap, BottomList, TopList, ListItem, ListContentHeader, ListContentWrap, LisItemIcon,
+    Container, YMap, MapYandex, ListTitle, ListIcon, Content, ContentWrap, ListContent, LogoWrapper, ListContentItem,
 } from './Map.style';
 const Maps = () => {
-    const location = useLocation();
     const [keys, setKeys] = useState('me');
     const MAPKEY = process.env.REACT_APP_MAP_KEY
-    const [active, setActive] = useState(location.pathname);
     const contentList = {
-        me:
+        me: <>
             <ListContentHeader>
                 <ListIcon src={edit} />
                 <ListTitle>Мои поля</ListTitle>
                 <ListIcon src={search} />
-            </ListContentHeader>,
+            </ListContentHeader>
+            <ListContentWrap>
+                <ListContentItem>
+                    <ListItemIcon src={frame1} />
+                    <ListContentBody>
+                        <ListItemTitle>Поле #123</ListItemTitle>
+                        <ListItemTitle subtext={true}>Нет культуры</ListItemTitle>
+                        <ListContentButton>Выброс</ListContentButton>
+                    </ListContentBody>
+                </ListContentItem>
+            </ListContentWrap>
+
+        </>,
         diagnostics:
             <ListContentHeader>
                 <ListIcon src={edit} />
@@ -53,12 +63,9 @@ const Maps = () => {
                     <TopList>
                         {topMenu.map(({ id, icon, path, title }) => {
                             return (
-                                <ListItem onClick={() => {
-                                    setKeys(path);
-                                    setActive(path);
-                                }} active={active === path} key={id}>
+                                <ListItem onClick={() => setKeys(path)} active={keys === path} key={id}>
                                     <LisItemIcon src={icon} />
-                                    <Link onClick={() => setActive(path)} active={active === path} to='/'>{title}</Link>
+                                    {title}
                                 </ListItem>
                             )
                         })}
@@ -66,9 +73,9 @@ const Maps = () => {
                     <BottomList>
                         {bottomMenu.map(({ id, icon, path, title }) => {
                             return (
-                                <ListItem onClick={() => setActive(path)} active={active === path} key={id}>
+                                <ListItem onClick={() => setKeys(path)} active={keys === path} key={id}>
                                     <LisItemIcon src={icon} />
-                                    <Link onClick={() => setActive(path)} active={active === path} to={path}>{title}</Link>
+                                    {title}
                                 </ListItem>
                             )
                         })}
