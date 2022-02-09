@@ -1,13 +1,24 @@
-import { useState } from 'react';
-import { topMenu, bottomMenu } from '../../utils/menus'
+import moment from 'moment';
+import { SubmitButton } from '../Form/Form.style';
+import { useRef, useState, useEffect } from 'react';
+import { topMenu, bottomMenu } from '../../utils/menus';
 import {
+    DegreeButton, SunlightIcon,
+    WarningBtn, WarningIcon, RulerBtn, RulerIcon, PlusIcon, MinusIcon, PlusMinusBtn, DateButton, DateIcon,
     Container, YMap, MapYandex, ListTitle, Content, ContentWrap, ListContent, LogoWrapper, ListContentItem,
     Logo, Aside, ListWrap, BottomList, TopList, ListItem, ListContentHeader, LisItemIcon, EditIcon, SearchIcon,
     ListItemTitle, ListContentBody, ListContentButton, Icon_1, Icon_2, Icon_3, ListNumber, ButtonIcon_1, ButtonIcon_2, ButtonIcon_3,
 } from './Map.style';
 const Maps = () => {
+    const map = useRef(null);
+    const [zoom, setZoom] = useState(10);
     const [keys, setKeys] = useState('me');
     const MAPKEY = process.env.REACT_APP_MAP_KEY
+    useEffect(() => {
+        if (map.current) {
+            map.current.setZoom(zoom, { duration: 300 });
+        }
+    }, [zoom]);
     const contentList = {
         me: <>
             <ListContentHeader>
@@ -65,7 +76,7 @@ const Maps = () => {
                 <ListContentItem>
                     <Icon_1 />
                     <ListContentBody>
-                        <ListItemTitle>Поле #456</ListItemTitle>
+                        <ListItemTitle>Поле #8415</ListItemTitle>
                         <ListItemTitle subtext={true}>Нет культуры</ListItemTitle>
                         <ListContentButton color="red" textColor="red">
                             <ButtonIcon_1 />
@@ -77,7 +88,7 @@ const Maps = () => {
                 <ListContentItem>
                     <Icon_2 />
                     <ListContentBody>
-                        <ListItemTitle>Поле #456</ListItemTitle>
+                        <ListItemTitle>Поле #1649</ListItemTitle>
                         <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
                         <ListContentButton color="green" textColor="green">
                             <ButtonIcon_2 />
@@ -93,7 +104,7 @@ const Maps = () => {
                 <ListContentItem>
                     <Icon_3 />
                     <ListContentBody>
-                        <ListItemTitle>Поле #456</ListItemTitle>
+                        <ListItemTitle>Поле #3478</ListItemTitle>
                         <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
                         <ListContentButton color="yellow" textColor="yellow">
                             <ButtonIcon_3 />
@@ -104,17 +115,100 @@ const Maps = () => {
                 </ListContentItem>
             </>,
         recomendation:
-            <ListContentHeader>
-                <EditIcon />
-                <ListTitle>Рекомендации</ListTitle>
-                <SearchIcon />
-            </ListContentHeader>,
-        note:
+            <>
+                <ListContentHeader>
+                    <EditIcon />
+                    <ListTitle>Рекомендации</ListTitle>
+                    <SearchIcon />
+                </ListContentHeader>
+                <ListContentItem>
+                    <Icon_1 />
+                    <ListContentBody>
+                        <ListItemTitle>Поле #9102</ListItemTitle>
+                        <ListItemTitle subtext={true}>Нет культуры</ListItemTitle>
+                        <ListContentButton color="red" textColor="red">
+                            <ButtonIcon_1 />
+                            Выброс
+                        </ListContentButton>
+                    </ListContentBody>
+                    <ListNumber>0.08</ListNumber>
+                </ListContentItem>
+                <ListContentItem>
+                    <Icon_2 />
+                    <ListContentBody>
+                        <ListItemTitle>Поле #02154</ListItemTitle>
+                        <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
+                        <ListContentButton color="green" textColor="green">
+                            <ButtonIcon_2 />
+                            Есть совет
+                        </ListContentButton>
+                        <ListContentButton color="red" textColor="red">
+                            <ButtonIcon_1 />
+                            Выброс
+                        </ListContentButton>
+                    </ListContentBody>
+                    <ListNumber>0.10</ListNumber>
+                </ListContentItem>
+                <ListContentItem>
+                    <Icon_3 />
+                    <ListContentBody>
+                        <ListItemTitle>Поле #871</ListItemTitle>
+                        <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
+                        <ListContentButton color="yellow" textColor="yellow">
+                            <ButtonIcon_3 />
+                            Засыхает
+                        </ListContentButton>
+                    </ListContentBody>
+                    <ListNumber>0.02</ListNumber>
+                </ListContentItem>
+            </>,
+        note: <>
             <ListContentHeader>
                 <EditIcon />
                 <ListTitle>Заметки</ListTitle>
                 <SearchIcon />
-            </ListContentHeader>,
+            </ListContentHeader>
+            <ListContentItem>
+                <Icon_1 />
+                <ListContentBody>
+                    <ListItemTitle>Поле #456</ListItemTitle>
+                    <ListItemTitle subtext={true}>Нет культуры</ListItemTitle>
+                    <ListContentButton color="red" textColor="red">
+                        <ButtonIcon_1 />
+                        Выброс
+                    </ListContentButton>
+                </ListContentBody>
+                <ListNumber>0.08</ListNumber>
+            </ListContentItem>
+            <ListContentItem>
+                <Icon_2 />
+                <ListContentBody>
+                    <ListItemTitle>Поле #456</ListItemTitle>
+                    <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
+                    <ListContentButton color="green" textColor="green">
+                        <ButtonIcon_2 />
+                        Есть совет
+                    </ListContentButton>
+                    <ListContentButton color="red" textColor="red">
+                        <ButtonIcon_1 />
+                        Выброс
+                    </ListContentButton>
+                </ListContentBody>
+                <ListNumber>0.10</ListNumber>
+            </ListContentItem>
+            <ListContentItem>
+                <Icon_3 />
+                <ListContentBody>
+                    <ListItemTitle>Поле #456</ListItemTitle>
+                    <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
+                    <ListContentButton color="yellow" textColor="yellow">
+                        <ButtonIcon_3 />
+                        Засыхает
+                    </ListContentButton>
+                </ListContentBody>
+                <ListNumber>0.02</ListNumber>
+            </ListContentItem>
+        </>,
     }
     return (
         <Container>
@@ -148,12 +242,21 @@ const Maps = () => {
             <Content>
                 <ContentWrap>
                     <ListContent>
-                        {contentList[keys]}
+                        <div>{contentList[keys]}</div>
+                        <SubmitButton isAdd>Добавить</SubmitButton>
                     </ListContent>
                     <YMap query={{ apikey: MAPKEY }}>
                         <MapYandex
-                            modules={["package.full"]}
-                            defaultState={{ center: [41.304095, 69.270503], zoom: 15 }}>
+                            instanceRef={map} modules={["package.full"]}
+                            defaultState={{ center: [41.304095, 69.270503], zoom }}>
+                            <WarningBtn><WarningIcon /></WarningBtn>
+                            <RulerBtn><RulerIcon /></RulerBtn>
+                            <PlusMinusBtn isMultiple>
+                                <PlusIcon onClick={() => setZoom(zoom + 1)} />
+                                <MinusIcon onClick={() => setZoom(zoom - 1)} />
+                            </PlusMinusBtn>
+                            <DateButton>{moment().format('ll')} <DateIcon /></DateButton>
+                            <DegreeButton><SunlightIcon />13 °</DegreeButton>
                         </MapYandex>
                     </YMap>
                 </ContentWrap>
@@ -161,5 +264,4 @@ const Maps = () => {
         </Container>
     );
 };
-
 export default Maps;

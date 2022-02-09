@@ -169,18 +169,22 @@ export const SubmitButton = styled.button`
   height: 42px;
   font-size: 14px;
   font-weight: 500;
+  font-family: "HandelGothicTLRegular";
   cursor: pointer;
   position: relative;
   line-height: 26px;
   border: 3px solid #fff323;
   background: transparent;
   backdrop-filter: blur(20px);
-  color: #fff323;
+  color: ${({ isAdd }) => isAdd ? '#000' : '#fff323'};
+  background-color: ${({ isAdd }) => isAdd ? '#fff323' : 'transparent'};
   margin: 31px 0 20px 0;
   transition: all 0.2s ease;
   &:hover {
-      color: #000;
-      background-color: #FFF323;
+      /* color: #000;
+      background-color: #FFF323; */
+      color: ${({ isAdd }) => isAdd ? '#fff323' : '#000'};
+      background-color: ${({ isAdd }) => isAdd ? 'transparent' : '#FFF323'};
   }
   /* &::before,
   ::after {
