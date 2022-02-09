@@ -31,7 +31,7 @@ const Maps = () => {
                 <ListContentBody>
                     <ListItemTitle>Поле #123</ListItemTitle>
                     <ListItemTitle subtext={true}>Нет культуры</ListItemTitle>
-                    <ListContentButton color="red" textColor="red">
+                    <ListContentButton color="red" hover="red" textColor="red">
                         <ButtonIcon_1 />
                         Выброс
                     </ListContentButton>
@@ -43,11 +43,11 @@ const Maps = () => {
                 <ListContentBody>
                     <ListItemTitle>Поле #123</ListItemTitle>
                     <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                    <ListContentButton color="green" textColor="green">
+                    <ListContentButton color="green" hover="green" textColor="green">
                         <ButtonIcon_2 />
                         Есть совет
                     </ListContentButton>
-                    <ListContentButton color="red" textColor="red">
+                    <ListContentButton color="red" hover="red" textColor="red">
                         <ButtonIcon_1 />
                         Выброс
                     </ListContentButton>
@@ -59,7 +59,7 @@ const Maps = () => {
                 <ListContentBody>
                     <ListItemTitle>Поле #123</ListItemTitle>
                     <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                    <ListContentButton color="yellow" textColor="yellow">
+                    <ListContentButton color="yellow" hover="yellow" textColor="yellow">
                         <ButtonIcon_3 />
                         Засыхает
                     </ListContentButton>
@@ -78,7 +78,7 @@ const Maps = () => {
                     <ListContentBody>
                         <ListItemTitle>Поле #8415</ListItemTitle>
                         <ListItemTitle subtext={true}>Нет культуры</ListItemTitle>
-                        <ListContentButton color="red" textColor="red">
+                        <ListContentButton color="red" hover="red" textColor="red">
                             <ButtonIcon_1 />
                             Выброс
                         </ListContentButton>
@@ -90,11 +90,11 @@ const Maps = () => {
                     <ListContentBody>
                         <ListItemTitle>Поле #1649</ListItemTitle>
                         <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                        <ListContentButton color="green" textColor="green">
+                        <ListContentButton color="green" hover="green" textColor="green">
                             <ButtonIcon_2 />
                             Есть совет
                         </ListContentButton>
-                        <ListContentButton color="red" textColor="red">
+                        <ListContentButton color="red" hover="red" textColor="red">
                             <ButtonIcon_1 />
                             Выброс
                         </ListContentButton>
@@ -106,7 +106,7 @@ const Maps = () => {
                     <ListContentBody>
                         <ListItemTitle>Поле #3478</ListItemTitle>
                         <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                        <ListContentButton color="yellow" textColor="yellow">
+                        <ListContentButton color="yellow" hover="yellow" textColor="yellow">
                             <ButtonIcon_3 />
                             Засыхает
                         </ListContentButton>
@@ -126,7 +126,7 @@ const Maps = () => {
                     <ListContentBody>
                         <ListItemTitle>Поле #9102</ListItemTitle>
                         <ListItemTitle subtext={true}>Нет культуры</ListItemTitle>
-                        <ListContentButton color="red" textColor="red">
+                        <ListContentButton color="red" hover="red" textColor="red">
                             <ButtonIcon_1 />
                             Выброс
                         </ListContentButton>
@@ -138,11 +138,11 @@ const Maps = () => {
                     <ListContentBody>
                         <ListItemTitle>Поле #02154</ListItemTitle>
                         <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                        <ListContentButton color="green" textColor="green">
+                        <ListContentButton color="green" hover="green" textColor="green">
                             <ButtonIcon_2 />
                             Есть совет
                         </ListContentButton>
-                        <ListContentButton color="red" textColor="red">
+                        <ListContentButton color="red" hover="red" textColor="red">
                             <ButtonIcon_1 />
                             Выброс
                         </ListContentButton>
@@ -154,7 +154,7 @@ const Maps = () => {
                     <ListContentBody>
                         <ListItemTitle>Поле #871</ListItemTitle>
                         <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                        <ListContentButton color="yellow" textColor="yellow">
+                        <ListContentButton color="yellow" hover="yellow" textColor="yellow">
                             <ButtonIcon_3 />
                             Засыхает
                         </ListContentButton>
@@ -173,7 +173,7 @@ const Maps = () => {
                 <ListContentBody>
                     <ListItemTitle>Поле #456</ListItemTitle>
                     <ListItemTitle subtext={true}>Нет культуры</ListItemTitle>
-                    <ListContentButton color="red" textColor="red">
+                    <ListContentButton color="red" hover="red" textColor="red">
                         <ButtonIcon_1 />
                         Выброс
                     </ListContentButton>
@@ -185,11 +185,11 @@ const Maps = () => {
                 <ListContentBody>
                     <ListItemTitle>Поле #456</ListItemTitle>
                     <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                    <ListContentButton color="green" textColor="green">
+                    <ListContentButton color="green" hover="green" textColor="green">
                         <ButtonIcon_2 />
                         Есть совет
                     </ListContentButton>
-                    <ListContentButton color="red" textColor="red">
+                    <ListContentButton color="red" hover="red" textColor="red">
                         <ButtonIcon_1 />
                         Выброс
                     </ListContentButton>
@@ -201,7 +201,7 @@ const Maps = () => {
                 <ListContentBody>
                     <ListItemTitle>Поле #456</ListItemTitle>
                     <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                    <ListContentButton color="yellow" textColor="yellow">
+                    <ListContentButton color="yellow" hover="yellow" textColor="yellow">
                         <ButtonIcon_3 />
                         Засыхает
                     </ListContentButton>

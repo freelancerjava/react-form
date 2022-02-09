@@ -34,6 +34,14 @@ const getColor = ({ textColor }) => {
         default: return "F63B00";
     }
 }
+const getHoverColor = ({ hover }) => {
+    switch (hover) {
+        case 'red': return "#d93c0b";
+        case 'green': return "#0dd65d";
+        case 'yellow': return "#d4ca20";
+        default: return "#d93c0b";
+    }
+}
 const IconCommon = css`
     width: 16px;
     height: 16px;
@@ -51,6 +59,11 @@ const HeaderIconCommon = css`
     width: 20px;
     height: 20px;
     cursor: pointer;
+    &:hover {
+        stroke-width: .3px;
+        stroke: #fff;
+        fill: white;
+    }
 `
 const ButtonCommon = css`
 position: absolute;
@@ -206,6 +219,9 @@ export const ListContentButton = styled.button`
     border-radius: 4px;
     margin-top: 9px;
     background: ${getButtonColor};
+    &:hover{
+        color: ${getHoverColor};
+    }
 `
 export const ListNumber = styled.span`
     color: #03DC33;

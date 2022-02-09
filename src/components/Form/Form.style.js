@@ -65,7 +65,11 @@ export const Title = styled.h1`
   font-weight: normal;
   justify-content: flex-start;
   font-family: "HandelGothicTLRegular";
+  transition: all 0.2s linear;
   color: ${({ active }) => (active ? "#fff" : "#66446B")};
+  &:hover {
+    color: #f1f1f1;
+  }
 `;
 export const InputWrap = styled.div`
   width: 100%;
@@ -179,10 +183,8 @@ export const SubmitButton = styled.button`
   color: ${({ isAdd }) => isAdd ? '#000' : '#fff323'};
   background-color: ${({ isAdd }) => isAdd ? '#fff323' : 'transparent'};
   margin: 31px 0 20px 0;
-  transition: all 0.2s ease;
+  transition: all 0.2s linear;
   &:hover {
-      /* color: #000;
-      background-color: #FFF323; */
       color: ${({ isAdd }) => isAdd ? '#fff323' : '#000'};
       background-color: ${({ isAdd }) => isAdd ? 'transparent' : '#FFF323'};
   }
