@@ -48,5 +48,16 @@ const CheckBoxStyle = styled.div`
     }
   }
 `;
-
+export const CheckboxWrap = styled.div`
+  display: flex;
+  align-items: center;
+`;
+export const CheckboxText = styled.p`
+  font-weight: 500;
+  font-size: 14px;
+  margin-left: 15px;
+  font-family: "Roboto";
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.87);
+`;
 export default CheckBoxStyle;

@@ -1,11 +1,12 @@
+import Input from '../Input/Input';
 import React, { useState } from 'react';
 import Checkbox from '../Checkbox/Checkbox';
-import logo from '../../assets/images/logo.svg';
 import SubmitButton from '../Button/Submit';
-import {
-    Container, Content, Logo, TitleWrap, Title, InputWrap, Input, InboxIcon, PasswordIcon,
-    ShowPassword, CheckboxWrap, CheckboxText, PasswordInput, ForgotPassword, Label, UserIcon
-} from './Form.style'
+import EmailInput from '../Input/EmailInput';
+import logo from '../../assets/images/logo.svg';
+import PasswordInput from '../Input/PasswordInput';
+import { CheckboxWrap, CheckboxText, } from '../Checkbox/Checkbox.style';
+import { ForgotPassword, Container, Content, Logo, TitleWrap, Title, InputWrap } from './Form.style'
 const Form = () => {
     const LOGIN = 'login';
     const REGISTER = 'register';
@@ -17,15 +18,8 @@ const Form = () => {
     const contentList = {
         login: <>
             <InputWrap>
-                <Label>
-                    <InboxIcon />
-                    <Input autoComplete='off' type="email" placeholder="agro@gmail.com" />
-                </Label>
-                <Label>
-                    <PasswordIcon />
-                    <PasswordInput value={text} onChange={(e) => setText(e.target.value)} autoComplete='off' type={showPassword ? 'text' : 'password'} placeholder="••••••••" />
-                    <ShowPassword onClick={() => setShowPassword(!showPassword)}>{text.length ? "Показать" : ''}</ShowPassword>
-                </Label>
+                <EmailInput />
+                <PasswordInput />
             </InputWrap>
             <CheckboxWrap>
                 <Checkbox checked={checked} onChange={(e) => setChecked(e.target.checked)} />
@@ -36,19 +30,9 @@ const Form = () => {
         </>,
         register: <>
             <InputWrap>
-                <Label>
-                    <UserIcon />
-                    <Input autoComplete='off' type="text" placeholder="@johndoe" />
-                </Label>
-                <Label>
-                    <InboxIcon />
-                    <Input autoComplete='off' type="email" placeholder="agro@gmail.com" />
-                </Label>
-                <Label>
-                    <PasswordIcon />
-                    <PasswordInput value={text} onChange={(e) => setText(e.target.value)} autoComplete='off' type={showPassword ? 'text' : 'password'} placeholder="••••••••" />
-                    <ShowPassword onClick={() => setShowPassword(!showPassword)}>{text.length ? "Показать" : ''}</ShowPassword>
-                </Label>
+                <Input />
+                <EmailInput />
+                <PasswordInput />
             </InputWrap>
             <CheckboxWrap>
                 <Checkbox checked={checked} onChange={(e) => setChecked(e.target.checked)} />

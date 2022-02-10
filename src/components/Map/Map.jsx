@@ -1,10 +1,13 @@
 import moment from 'moment';
+import DateButton from '../Button/Date';
+import RulerButton from '../Button/Ruler';
+import WarningBtn from '../Button/Warning';
 import SubmitButton from '../Button/Submit';
+import DegreeButton from '../Button/Degree';
 import { useRef, useState, useEffect } from 'react';
 import { topMenu, bottomMenu } from '../../utils/menus';
 import {
-    DegreeButton, SunlightIcon,
-    WarningBtn, WarningIcon, RulerBtn, RulerIcon, PlusIcon, MinusIcon, PlusMinusBtn, DateButton, DateIcon,
+    PlusIcon, MinusIcon, PlusMinusBtn,
     Container, YMap, MapYandex, ListTitle, Content, ContentWrap, ListContent, LogoWrapper, ListContentItem,
     Logo, Aside, ListWrap, BottomList, TopList, ListItem, ListContentHeader, LisItemIcon, EditIcon, SearchIcon,
     ListItemTitle, ListContentBody, ListContentButton, Icon_1, Icon_2, Icon_3, ListNumber, ButtonIcon_1, ButtonIcon_2, ButtonIcon_3,
@@ -248,14 +251,14 @@ const Maps = () => {
                     <YMap query={{ apikey: MAPKEY }}>
                         <MapYandex instanceRef={map}
                             defaultState={{ center: [41.304095, 69.270503], zoom }}>
-                            <WarningBtn><WarningIcon /></WarningBtn>
-                            <RulerBtn><RulerIcon /></RulerBtn>
+                            <WarningBtn />
+                            <RulerButton />
                             <PlusMinusBtn isMultiple>
                                 <PlusIcon onClick={() => setZoom(zoom + 1)} />
                                 <MinusIcon onClick={() => setZoom(zoom - 1)} />
                             </PlusMinusBtn>
-                            <DateButton>{moment().format('ll')} <DateIcon /></DateButton>
-                            <DegreeButton><SunlightIcon />13 °</DegreeButton>
+                            <DateButton date={moment().format('ll')} />
+                            <DegreeButton title="13 °"></DegreeButton>
                         </MapYandex>
                     </YMap>
                 </ContentWrap>

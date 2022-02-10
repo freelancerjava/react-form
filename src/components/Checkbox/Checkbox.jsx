@@ -1,7 +1,6 @@
 import CheckBoxStyle from './Checkbox.style';
 
-const CheckBox = ({ value, htmlFor, disabled = false, ...props }) => {
-
+export default ({ value, htmlFor, disabled = false, ...props }) => {
     return (
         <CheckBoxStyle  {...props}>
             <label htmlFor={htmlFor}>
@@ -17,4 +16,3 @@ const CheckBox = ({ value, htmlFor, disabled = false, ...props }) => {
         </CheckBoxStyle>
     );
 };
-export default CheckBox;
