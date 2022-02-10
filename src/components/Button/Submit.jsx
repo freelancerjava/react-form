@@ -1,5 +1,5 @@
 import React from 'react'
 import { Button } from './style'
 export default ({ title, ...props }) => (
-    <Button {...props}>{title}</Button>
+    <Button height={42} {...props}>{title}</Button>
 )

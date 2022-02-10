@@ -10,10 +10,8 @@ import { ForgotPassword, Container, Content, Logo, TitleWrap, Title, InputWrap }
 const Form = () => {
     const LOGIN = 'login';
     const REGISTER = 'register';
-    const [text, setText] = useState('');
     const [keys, setKeys] = useState(LOGIN);
     const [checked, setChecked] = useState(false);
-    const [showPassword, setShowPassword] = useState(false);
     const onActive = key => setKeys(key);
     const contentList = {
         login: <>

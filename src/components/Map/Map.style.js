@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import { YMaps, Map } from 'react-yandex-maps';
 import styled, { css } from "styled-components";
 import { ReactComponent as plus } from '../../assets/icons/plus.svg';
@@ -127,13 +126,6 @@ export const BottomList = styled(TopList)`
     border-style: solid;
     border-width: 0.2px;
     border-image: linear-gradient(to left,rgb(39 36 36) 1%,rgb(55 54 54) 50%,rgb(104 90 90) 100%) 100% 0 100% 0/3px 0 3px 0 stretch;
-`
-export const Link = styled(NavLink)`
-    transition: all 0.2s ease-in;
-    color: ${({ active }) => (active ? "#fff" : "#7E7BA2")};
-    &:hover {
-        color: #fff;
-    }
 `
 export const ListItem = styled.li`
     display: flex;

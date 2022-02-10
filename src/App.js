@@ -1,15 +1,12 @@
-import { Map, Form } from './components/index';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Button from './components/Button/Submit';
+import { Container } from './components/style'
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Map />} />
-          <Route path="/form" element={<Form />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <Container>
+      <Link to="/form"><Button title="Формы">Form</Button></Link>
+      <Link to="/map"><Button title="Карта">Map</Button></Link>
+    </Container>
   );
 }
 export default App;

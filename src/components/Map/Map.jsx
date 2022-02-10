@@ -258,7 +258,7 @@ const Maps = () => {
                                 <MinusIcon onClick={() => setZoom(zoom - 1)} />
                             </PlusMinusBtn>
                             <DateButton date={moment().format('ll')} />
-                            <DegreeButton title="13 °"></DegreeButton>
+                            <DegreeButton title="13 °" />
                         </MapYandex>
                     </YMap>
                 </ContentWrap>

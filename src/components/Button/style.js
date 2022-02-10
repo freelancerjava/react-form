@@ -22,7 +22,7 @@ position: absolute;
 `
 export const Button = styled.button`
   width: 100%;
-  height: 42px;
+  height: ${({ height }) => height ? "42px" : ''};
   font-size: 14px;
   font-weight: 500;
   font-family: "HandelGothicTLRegular";
