@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { SubmitButton } from '../Form/Form.style';
+import SubmitButton from '../Button/Submit';
 import { useRef, useState, useEffect } from 'react';
 import { topMenu, bottomMenu } from '../../utils/menus';
 import {
@@ -243,11 +243,10 @@ const Maps = () => {
                 <ContentWrap>
                     <ListContent>
                         <div>{contentList[keys]}</div>
-                        <SubmitButton isAdd>Добавить</SubmitButton>
+                        <SubmitButton title="+ Добавить" />
                     </ListContent>
                     <YMap query={{ apikey: MAPKEY }}>
-                        <MapYandex
-                            instanceRef={map} modules={["package.full"]}
+                        <MapYandex instanceRef={map}
                             defaultState={{ center: [41.304095, 69.270503], zoom }}>
                             <WarningBtn><WarningIcon /></WarningBtn>
                             <RulerBtn><RulerIcon /></RulerBtn>

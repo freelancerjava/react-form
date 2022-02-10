@@ -59,10 +59,12 @@ const HeaderIconCommon = css`
     width: 20px;
     height: 20px;
     cursor: pointer;
+    & path {
     &:hover {
         stroke-width: .3px;
         stroke: #fff;
-        fill: white;
+        fill: #fff;
+    }
     }
 `
 const ButtonCommon = css`

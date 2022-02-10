@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Checkbox from '../Checkbox/Checkbox';
 import logo from '../../assets/images/logo.svg';
+import SubmitButton from '../Button/Submit';
 import {
     Container, Content, Logo, TitleWrap, Title, InputWrap, Input, InboxIcon, PasswordIcon,
-    ShowPassword, CheckboxWrap, CheckboxText, PasswordInput, SubmitButton, ForgotPassword, Label, UserIcon
+    ShowPassword, CheckboxWrap, CheckboxText, PasswordInput, ForgotPassword, Label, UserIcon
 } from './Form.style'
 const Form = () => {
     const LOGIN = 'login';
@@ -30,7 +31,7 @@ const Form = () => {
                 <Checkbox checked={checked} onChange={(e) => setChecked(e.target.checked)} />
                 <CheckboxText>Запомнить меня</CheckboxText>
             </CheckboxWrap>
-            <SubmitButton>Войти</SubmitButton>
+            <SubmitButton title="Войти" />
             <ForgotPassword>Забыли пароль?</ForgotPassword>
         </>,
         register: <>
@@ -53,7 +54,7 @@ const Form = () => {
                 <Checkbox checked={checked} onChange={(e) => setChecked(e.target.checked)} />
                 <CheckboxText>Запомнить меня</CheckboxText>
             </CheckboxWrap>
-            <SubmitButton>Регистрация</SubmitButton>
+            <SubmitButton title="Регистрация" />
             <ForgotPassword onClick={() => setKeys(LOGIN)}>У вас есть аккаунт?</ForgotPassword>
         </>
     }
