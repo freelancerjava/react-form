@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.e0978b51.css","mappings":"AAAA,EAKI,qBAAsB,CACtB,kBAAqB,CAHrB,oBAAqB,CAFrB,QAAS,CACT,SAAU,CAEV,oBAGJ","sources":["index.css"],"sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n    list-style-type: none;\n    text-decoration: none;\n    box-sizing: border-box;\n    font-family: \"Roboto\";\n}"],"names":[],"sourceRoot":""}
