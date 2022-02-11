@@ -3,6 +3,10 @@ import { ReactComponent as date } from '../../assets/icons/date.svg';
 import { ReactComponent as ruler } from '../../assets/icons/ruler.svg';
 import { ReactComponent as warning } from '../../assets/icons/warning.svg';
 import { ReactComponent as sunlight } from '../../assets/icons/sunlight.svg';
+import { ReactComponent as frame_icon_1 } from '../../assets/icons/frame_icon_1.svg';
+import { ReactComponent as frame_icon_2 } from '../../assets/icons/frame_icon_2.svg';
+import { ReactComponent as frame_icon_3 } from '../../assets/icons/frame_icon_3.svg';
+
 const MapIconCommon = css`
     width: 16px;
     height: 16px;
@@ -20,16 +24,54 @@ position: absolute;
     backdrop-filter: blur(3px);
     background-color: #312D30;
 `
+const IconCommon = css`
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+`
+const getBorder = ({ border }) => {
+    switch (border) {
+        case 'black': return "3px solid #000";
+        case 'white': return "3px solid #fff";
+        case 'yellow': return "3px solid #fff323";
+        default: return "3px solid #fff323";
+    }
+}
+const getButtonColor = ({ color }) => {
+    switch (color) {
+        case 'red': return "rgba(255, 31, 0, 0.08)";
+        case 'green': return "#42553D";
+        case 'yellow': return "#504F3A";
+        default: return "rgba(255, 31, 0, 0.08)";
+    }
+}
+const getColor = ({ textColor }) => {
+    switch (textColor) {
+        case 'red': return "#F63B00";
+        case 'green': return "#00FF66";
+        case 'yellow': return "#FFF323";
+        default: return "F63B00";
+    }
+}
+const getHoverColor = ({ hover }) => {
+    switch (hover) {
+        case 'red': return "#d93c0b";
+        case 'green': return "#0dd65d";
+        case 'yellow': return "#d4ca20";
+        default: return "#d93c0b";
+    }
+}
 export const Button = styled.button`
-  width: 100%;
-  height: ${({ height }) => height ? "42px" : ''};
+  width: ${({ width }) => (width || '100%')};
+  padding: ${({ padding }) => (padding || '')};
+  height: ${({ height }) => (height || '')};
+  text-align: ${({ align }) => (align || 'center')};
   font-size: 14px;
   font-weight: 500;
   font-family: "HandelGothicTLRegular";
   cursor: pointer;
   position: relative;
-  line-height: 26px;
-  border: 3px solid #fff323;
+  border: ${getBorder};
   background: transparent;
   backdrop-filter: blur(20px);
   color: ${({ isAdd }) => isAdd ? '#000' : '#fff323'};
@@ -51,16 +93,25 @@ export const Button = styled.button`
   &::before {
     top: -2px;
     left: -2px;
-    border-right: 3px solid #fff323;
+    border-right: 2px solid #fff323;
     transform: rotate(49deg) translate(-71%);
   }
   &::after {
     bottom: 0;
     right: 0;
-    border-left: 3px solid #fff323;
+    border-left: 2px solid #fff323;
     transform: rotate(49deg) translate(71%);
   } */
-`;
+`
+export const ButtonIcon_1 = styled(frame_icon_1)`
+    ${IconCommon}
+`
+export const ButtonIcon_2 = styled(frame_icon_2)`
+    ${IconCommon}
+`
+export const ButtonIcon_3 = styled(frame_icon_3)`
+    ${IconCommon}
+`
 export const SunlightIcon = styled(sunlight)`
     ${MapIconCommon};
 `
@@ -126,4 +177,20 @@ export const DateButton = styled.button`
     cursor: pointer;
     align-items: center;
     justify-content: space-evenly;
+`
+export const SmallButton = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 24px;
+    border: none;
+    padding: 12px;
+    color: ${getColor};
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 9px;
+    background: ${getButtonColor};
+    &:hover {
+        color: ${getHoverColor};
+    }
 `

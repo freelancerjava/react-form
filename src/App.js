@@ -1,11 +1,15 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Button from './components/Button/Submit';
-import { Container } from './components/style'
+import { Container, Content } from './components/style';
 function App() {
   return (
     <Container>
-      <Link to="/form"><Button title="Формы">Form</Button></Link>
-      <Link to="/map"><Button title="Карта">Map</Button></Link>
+      <Content background="primary">
+        <Link to="/form"><Button height="60px" width="200px" padding="16px" title="Формы">Form</Button></Link>
+      </Content>
+      <Content background="success">
+        <Link to="/map"><Button height="60px" width="200px" padding="16px" title="Карта">Map</Button></Link>
+      </Content>
     </Container>
   );
 }

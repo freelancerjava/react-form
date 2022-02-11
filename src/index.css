@@ -6,3 +6,8 @@
     box-sizing: border-box;
     font-family: "Roboto";
 }
+:root {
+    --border-color: linear-gradient( 180deg,rgb(212 187 194) 0%,rgb(167 136 155) 100% );
+    -webkit-backdrop-filter: blur(3px);
+    --menubackground: linear-gradient(270deg, #FFF323 -473.83%, rgba(255, 243, 35, 0) 83.89%)
+}

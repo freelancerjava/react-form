@@ -8,7 +8,6 @@ import { ReactComponent as edit } from '../../assets/icons/edit-icon.svg';
 import { ReactComponent as frame_1 } from '../../assets/icons/frame_1.svg';
 import { ReactComponent as frame_2 } from '../../assets/icons/frame_2.svg';
 import { ReactComponent as frame_3 } from '../../assets/icons/frame_3.svg';
-import { ReactComponent as sortIcon } from '../../assets/icons/sort-icon.svg';
 import { ReactComponent as frame_icon_1 } from '../../assets/icons/frame_icon_1.svg';
 import { ReactComponent as frame_icon_2 } from '../../assets/icons/frame_icon_2.svg';
 import { ReactComponent as frame_icon_3 } from '../../assets/icons/frame_icon_3.svg';
@@ -45,8 +44,7 @@ position: absolute;
     border-width: 1.8px;
     border-image-slice: 1;
     height: ${({ isMultiple }) => isMultiple ? '80px' : '44px'};
-    border-image-source: linear-gradient( 180deg,rgb(212 187 194) 0%,rgb(167 136 155) 100% );
-    -webkit-backdrop-filter: blur(3px);
+    border-image-source: "var(--border-color)";
     backdrop-filter: blur(3px);
     background-color: #312D30;
 `
@@ -139,7 +137,7 @@ export const ListItem = styled.li`
     transition: all 0.2s ease-in;
     color: ${({ active }) => (active ? "#fff" : "#7E7BA2")};
     border-right: ${({ active }) => (active ? "3px solid #FFF323" : "none")};
-    background: ${({ active }) => (active ? "linear-gradient(270deg, #FFF323 -473.83%, rgba(255, 243, 35, 0) 83.89%)" : "transparent")};
+    background: ${({ active }) => (active ? "var(--menubackground)" : "transparent")};
     &:hover {
         color: #fff;
     }
@@ -148,6 +146,7 @@ export const LisItemIcon = styled.img`
     width: 20px;
     height: 20px;
     margin-right: 15px;
+    color: red;
 `
 export const ContentWrap = styled.div`
     width: 100%;
@@ -209,7 +208,7 @@ export const ListContentButton = styled.button`
     border-radius: 4px;
     margin-top: 9px;
     background: ${getButtonColor};
-    &:hover{
+    &:hover {
         color: ${getHoverColor};
     }
 `

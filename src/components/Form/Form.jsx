@@ -23,7 +23,7 @@ const Form = () => {
                 <Checkbox checked={checked} onChange={(e) => setChecked(e.target.checked)} />
                 <CheckboxText>Запомнить меня</CheckboxText>
             </CheckboxWrap>
-            <SubmitButton title="Войти" />
+            <SubmitButton height="42px" title="Войти" />
             <ForgotPassword>Забыли пароль?</ForgotPassword>
         </>,
         register: <>
@@ -36,7 +36,7 @@ const Form = () => {
                 <Checkbox checked={checked} onChange={(e) => setChecked(e.target.checked)} />
                 <CheckboxText>Запомнить меня</CheckboxText>
             </CheckboxWrap>
-            <SubmitButton title="Регистрация" />
+            <SubmitButton height="42px" title="Регистрация" />
             <ForgotPassword onClick={() => setKeys(LOGIN)}>У вас есть аккаунт?</ForgotPassword>
         </>
     }

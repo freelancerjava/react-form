@@ -1,5 +1,7 @@
 import moment from 'moment';
+import AsideHeader from './AsideHeader';
 import DateButton from '../Button/Date';
+import SmallButton from '../Button/Small';
 import RulerButton from '../Button/Ruler';
 import WarningBtn from '../Button/Warning';
 import SubmitButton from '../Button/Submit';
@@ -8,10 +10,10 @@ import { useRef, useState, useEffect } from 'react';
 import { topMenu, bottomMenu } from '../../utils/menus';
 import {
     PlusIcon, MinusIcon, PlusMinusBtn,
-    Container, YMap, MapYandex, ListTitle, Content, ContentWrap, ListContent, LogoWrapper, ListContentItem,
-    Logo, Aside, ListWrap, BottomList, TopList, ListItem, ListContentHeader, LisItemIcon, EditIcon, SearchIcon,
-    ListItemTitle, ListContentBody, ListContentButton, Icon_1, Icon_2, Icon_3, ListNumber, ButtonIcon_1, ButtonIcon_2, ButtonIcon_3,
-} from './Map.style';
+    Logo, Aside, ListWrap, BottomList, TopList, ListItem, LisItemIcon,
+    Container, YMap, MapYandex, Content, ContentWrap, ListContent, LogoWrapper, ListContentItem,
+    ListItemTitle, ListContentBody, Icon_1, Icon_2, Icon_3, ListNumber, ButtonIcon_1, ButtonIcon_2, ButtonIcon_3,
+} from './style';
 const Maps = () => {
     const map = useRef(null);
     const [zoom, setZoom] = useState(10);
@@ -24,20 +26,13 @@ const Maps = () => {
     }, [zoom]);
     const contentList = {
         me: <>
-            <ListContentHeader>
-                <EditIcon />
-                <ListTitle>Мои поля</ListTitle>
-                <SearchIcon />
-            </ListContentHeader>
+            <AsideHeader title="Мои" />
             <ListContentItem>
                 <Icon_1 />
                 <ListContentBody>
                     <ListItemTitle>Поле #123</ListItemTitle>
                     <ListItemTitle subtext={true}>Нет культуры</ListItemTitle>
-                    <ListContentButton color="red" hover="red" textColor="red">
-                        <ButtonIcon_1 />
-                        Выброс
-                    </ListContentButton>
+                    <SmallButton icon={<ButtonIcon_1 />} color="red" hover="red" textColor="red" title="Выброс" />
                 </ListContentBody>
                 <ListNumber>0.03</ListNumber>
             </ListContentItem>
@@ -46,14 +41,8 @@ const Maps = () => {
                 <ListContentBody>
                     <ListItemTitle>Поле #123</ListItemTitle>
                     <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                    <ListContentButton color="green" hover="green" textColor="green">
-                        <ButtonIcon_2 />
-                        Есть совет
-                    </ListContentButton>
-                    <ListContentButton color="red" hover="red" textColor="red">
-                        <ButtonIcon_1 />
-                        Выброс
-                    </ListContentButton>
+                    <SmallButton icon={<ButtonIcon_2 />} color="green" hover="green" textColor="green" title="Есть совет" />
+                    <SmallButton icon={<ButtonIcon_1 />} color="red" hover="red" textColor="red" title="Выброс" />
                 </ListContentBody>
                 <ListNumber>0.03</ListNumber>
             </ListContentItem>
@@ -62,29 +51,20 @@ const Maps = () => {
                 <ListContentBody>
                     <ListItemTitle>Поле #123</ListItemTitle>
                     <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                    <ListContentButton color="yellow" hover="yellow" textColor="yellow">
-                        <ButtonIcon_3 />
-                        Засыхает
-                    </ListContentButton>
+                    <SmallButton icon={<ButtonIcon_3 />} color="yellow" hover="yellow" textColor="yellow" title="Засыхает" />
                 </ListContentBody>
                 <ListNumber>0.03</ListNumber>
             </ListContentItem>
         </>,
         diagnostics:
-            <><ListContentHeader>
-                <EditIcon />
-                <ListTitle>Диагностика</ListTitle>
-                <SearchIcon />
-            </ListContentHeader>
+            <>
+                <AsideHeader title="Диагностика" />
                 <ListContentItem>
                     <Icon_1 />
                     <ListContentBody>
                         <ListItemTitle>Поле #8415</ListItemTitle>
                         <ListItemTitle subtext={true}>Нет культуры</ListItemTitle>
-                        <ListContentButton color="red" hover="red" textColor="red">
-                            <ButtonIcon_1 />
-                            Выброс
-                        </ListContentButton>
+                        <SmallButton icon={<ButtonIcon_1 />} color="red" hover="red" textColor="red" title="Выброс" />
                     </ListContentBody>
                     <ListNumber>0.08</ListNumber>
                 </ListContentItem>
@@ -93,14 +73,8 @@ const Maps = () => {
                     <ListContentBody>
                         <ListItemTitle>Поле #1649</ListItemTitle>
                         <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                        <ListContentButton color="green" hover="green" textColor="green">
-                            <ButtonIcon_2 />
-                            Есть совет
-                        </ListContentButton>
-                        <ListContentButton color="red" hover="red" textColor="red">
-                            <ButtonIcon_1 />
-                            Выброс
-                        </ListContentButton>
+                        <SmallButton icon={<ButtonIcon_2 />} color="green" hover="green" textColor="green" title="Есть совет" />
+                        <SmallButton icon={<ButtonIcon_1 />} color="red" hover="red" textColor="red" title="Выброс" />
                     </ListContentBody>
                     <ListNumber>0.10</ListNumber>
                 </ListContentItem>
@@ -109,30 +83,20 @@ const Maps = () => {
                     <ListContentBody>
                         <ListItemTitle>Поле #3478</ListItemTitle>
                         <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                        <ListContentButton color="yellow" hover="yellow" textColor="yellow">
-                            <ButtonIcon_3 />
-                            Засыхает
-                        </ListContentButton>
+                        <SmallButton icon={<ButtonIcon_3 />} color="yellow" hover="yellow" textColor="yellow" title="Засыхает" />
                     </ListContentBody>
                     <ListNumber>0.02</ListNumber>
                 </ListContentItem>
             </>,
         recomendation:
             <>
-                <ListContentHeader>
-                    <EditIcon />
-                    <ListTitle>Рекомендации</ListTitle>
-                    <SearchIcon />
-                </ListContentHeader>
+                <AsideHeader title="Рекомендации" />
                 <ListContentItem>
                     <Icon_1 />
                     <ListContentBody>
                         <ListItemTitle>Поле #9102</ListItemTitle>
                         <ListItemTitle subtext={true}>Нет культуры</ListItemTitle>
-                        <ListContentButton color="red" hover="red" textColor="red">
-                            <ButtonIcon_1 />
-                            Выброс
-                        </ListContentButton>
+                        <SmallButton icon={<ButtonIcon_1 />} color="red" hover="red" textColor="red" title="Выброс" />
                     </ListContentBody>
                     <ListNumber>0.08</ListNumber>
                 </ListContentItem>
@@ -141,14 +105,8 @@ const Maps = () => {
                     <ListContentBody>
                         <ListItemTitle>Поле #02154</ListItemTitle>
                         <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                        <ListContentButton color="green" hover="green" textColor="green">
-                            <ButtonIcon_2 />
-                            Есть совет
-                        </ListContentButton>
-                        <ListContentButton color="red" hover="red" textColor="red">
-                            <ButtonIcon_1 />
-                            Выброс
-                        </ListContentButton>
+                        <SmallButton icon={<ButtonIcon_2 />} color="green" hover="green" textColor="green" title="Есть совет" />
+                        <SmallButton icon={<ButtonIcon_1 />} color="red" hover="red" textColor="red" title="Выброс" />
                     </ListContentBody>
                     <ListNumber>0.10</ListNumber>
                 </ListContentItem>
@@ -157,29 +115,19 @@ const Maps = () => {
                     <ListContentBody>
                         <ListItemTitle>Поле #871</ListItemTitle>
                         <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                        <ListContentButton color="yellow" hover="yellow" textColor="yellow">
-                            <ButtonIcon_3 />
-                            Засыхает
-                        </ListContentButton>
+                        <SmallButton icon={<ButtonIcon_3 />} color="yellow" hover="yellow" textColor="yellow" title="Засыхает" />
                     </ListContentBody>
                     <ListNumber>0.02</ListNumber>
                 </ListContentItem>
             </>,
         note: <>
-            <ListContentHeader>
-                <EditIcon />
-                <ListTitle>Заметки</ListTitle>
-                <SearchIcon />
-            </ListContentHeader>
+            <AsideHeader title="Заметки" />
             <ListContentItem>
                 <Icon_1 />
                 <ListContentBody>
                     <ListItemTitle>Поле #456</ListItemTitle>
                     <ListItemTitle subtext={true}>Нет культуры</ListItemTitle>
-                    <ListContentButton color="red" hover="red" textColor="red">
-                        <ButtonIcon_1 />
-                        Выброс
-                    </ListContentButton>
+                    <SmallButton icon={<ButtonIcon_1 />} color="red" hover="red" textColor="red" title="Выброс" />
                 </ListContentBody>
                 <ListNumber>0.08</ListNumber>
             </ListContentItem>
@@ -188,14 +136,8 @@ const Maps = () => {
                 <ListContentBody>
                     <ListItemTitle>Поле #456</ListItemTitle>
                     <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                    <ListContentButton color="green" hover="green" textColor="green">
-                        <ButtonIcon_2 />
-                        Есть совет
-                    </ListContentButton>
-                    <ListContentButton color="red" hover="red" textColor="red">
-                        <ButtonIcon_1 />
-                        Выброс
-                    </ListContentButton>
+                    <SmallButton icon={<ButtonIcon_2 />} color="green" hover="green" textColor="green" title="Есть совет" />
+                    <SmallButton icon={<ButtonIcon_1 />} color="red" hover="red" textColor="red" title="Выброс" />
                 </ListContentBody>
                 <ListNumber>0.10</ListNumber>
             </ListContentItem>
@@ -204,10 +146,7 @@ const Maps = () => {
                 <ListContentBody>
                     <ListItemTitle>Поле #456</ListItemTitle>
                     <ListItemTitle subtext={true}>Пшеница твердая</ListItemTitle>
-                    <ListContentButton color="yellow" hover="yellow" textColor="yellow">
-                        <ButtonIcon_3 />
-                        Засыхает
-                    </ListContentButton>
+                    <SmallButton icon={<ButtonIcon_3 />} color="yellow" hover="yellow" textColor="yellow" title="Засыхает" />
                 </ListContentBody>
                 <ListNumber>0.02</ListNumber>
             </ListContentItem>
@@ -246,11 +185,10 @@ const Maps = () => {
                 <ContentWrap>
                     <ListContent>
                         <div>{contentList[keys]}</div>
-                        <SubmitButton title="+ Добавить" />
+                        <SubmitButton align='left' padding="12px" height="46px" title="+ Добавить" />
                     </ListContent>
                     <YMap query={{ apikey: MAPKEY }}>
-                        <MapYandex instanceRef={map}
-                            defaultState={{ center: [41.304095, 69.270503], zoom }}>
+                        <MapYandex instanceRef={map} defaultState={{ center: [41.304095, 69.270503], zoom }}>
                             <WarningBtn />
                             <RulerButton />
                             <PlusMinusBtn isMultiple>
