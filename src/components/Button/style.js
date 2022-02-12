@@ -12,7 +12,7 @@ const MapIconCommon = css`
     height: 16px;
 `
 const ButtonCommon = css`
-position: absolute;
+    position: absolute;
     z-index: 2;
     width: 44px;
     cursor: pointer;

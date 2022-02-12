@@ -14,6 +14,7 @@ import {
     Container, YMap, MapYandex, Content, ContentWrap, ListContent, LogoWrapper, ListContentItem,
     ListItemTitle, ListContentBody, Icon_1, Icon_2, Icon_3, ListNumber, ButtonIcon_1, ButtonIcon_2, ButtonIcon_3,
 } from './style';
+import { Polygon } from 'react-yandex-maps';
 const Maps = () => {
     const map = useRef(null);
     const [zoom, setZoom] = useState(10);
@@ -189,6 +190,28 @@ const Maps = () => {
                     </ListContent>
                     <YMap query={{ apikey: MAPKEY }}>
                         <MapYandex instanceRef={map} defaultState={{ center: [41.304095, 69.270503], zoom }}>
+
+                            <Polygon
+                                onDrag={(e) => {
+                                    console.log(e);
+                                }}
+                                geometry={[
+                                    [
+                                        [41.26051526495563, 69.21265869140286],
+                                        [41.39416680731886, 69.41265869140341],
+                                        [41.34813203080575, 69.44424438476248],
+                                        [41.21438528828364, 69.24424438476147],
+                                    ]
+                                ]}
+                                options={{
+                                    fillColor: '#00FF00',
+                                    strokeColor: '#0000FF',
+                                    opacity: 0.5,
+                                    strokeWidth: 5,
+                                    strokeStyle: 'solid',
+                                    draggable: true
+                                }}
+                            />
                             <WarningBtn />
                             <RulerButton />
                             <PlusMinusBtn isMultiple>
@@ -197,6 +220,8 @@ const Maps = () => {
                             </PlusMinusBtn>
                             <DateButton date={moment().format('ll')} />
                             <DegreeButton title="13 °" />
+
+
                         </MapYandex>
                     </YMap>
                 </ContentWrap>
